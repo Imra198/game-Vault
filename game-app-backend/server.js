@@ -5,6 +5,7 @@ require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const axios = require("axios");
 
 
 const app = express();
@@ -14,7 +15,7 @@ app.use(cors()); // Allows React to make requests to this backend
 app.use(express.json({limit: '10mb'})); // Allows our server to accept JSON data in request bodies
 
 // Simple Health Check Route
-app.get('/', (req, res) => {
+app.get('/api/games', (req, res) => {
   res.send('Game App API Server is running...');
 });
 
