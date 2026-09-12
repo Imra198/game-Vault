@@ -8,7 +8,6 @@
   flex-direction: column;
 }
 
-Stretches the parent application wrapper to fill the display window */
 .app-container {
     display: flex;
     flex-direction: column;
