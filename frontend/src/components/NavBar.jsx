@@ -9,7 +9,7 @@ import {
   FaChevronDown 
 } from "react-icons/fa";
 import AuthModal from "./AuthModal";
-import "../css/Navbar.css";
+import "../css/NavBar.css";
 import logo from "../assets/logo.png";
 
 function NavBar() {
