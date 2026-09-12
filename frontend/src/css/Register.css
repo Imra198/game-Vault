@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap");
+
+.auth-container {
+    --bg: #201a2b;
+    --surface: #2e2440;
+    --accent: #e8a33d;
+    --accent-teal: #3e9c90;
+    --text: #f4efe6;
+    --text-muted: #b8afc7;
+    --error: #e85d5d;
+
+    position: relative;
+    max-width: 420px;
+    margin: 4rem auto;
+    padding: 2.25rem 2rem 2rem;
+    background: var(--surface);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
+}
+
+/* Title, framed as a ticket-stub header rather than a small mono eyebrow label */
+.auth-container::before {
+    content: "Register to GameApp";
+    display: block;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 1.4rem;
+}
+
+.auth-container::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4.35rem;
+    left: 2rem;
+    right: 2rem;
+    border-top: 2px dashed rgba(244, 239, 230, 0.18);
+}
+
+/* The ::before title above ("Register to GameApp") replaces this heading,
+   so the <h2>Register</h2> from Register.jsx is visually hidden rather
+   than shown twice. Screen readers still see it for page structure. */
+.auth-container h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.error-message {
+    background: rgba(232, 93, 93, 0.12);
+    border: 1px solid rgba(232, 93, 93, 0.4);
+    color: var(--error);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    padding: 0.65rem 0.85rem;
+    border-radius: 3px;
+    margin-bottom: 1.25rem;
+}
+
+.form-group {
+    margin-bottom: 1.4rem;
+}
+
+.form-group label {
+    display: block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(244, 239, 230, 0.25);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 0.1rem;
+    transition: border-color 0.15s ease;
+}
+
+.form-group input::placeholder {
+    color: rgba(244, 239, 230, 0.35);
+}
+
+.form-group input:hover {
+    border-bottom-color: rgba(244, 239, 230, 0.45);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-bottom-color: var(--accent-teal);
+}
+
+/* Keyboard-visible focus ring, distinct from the plain hover state above */
+.form-group input:focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Signature element: chunky "cartridge button" with a hard offset shadow
+   that presses flat on click, instead of a soft gradient hover state. */
+.auth-container button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.85rem 1rem;
+    background: var(--accent);
+    color: #201a2b;
+    border: none;
+    border-radius: 3px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 0 rgba(62, 156, 144, 0.9);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
+}
+
+.auth-container button[type="submit"]:hover:not(:disabled) {
+    background: #f0b158;
+}
+
+.auth-container button[type="submit"]:active:not(:disabled) {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 0 rgba(62, 156, 144, 0.9);
+}
+
+.auth-container button[type="submit"]:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 3px;
+}
+
+.auth-container button[type="submit"]:disabled {
+    background: rgba(232, 163, 61, 0.45);
+    box-shadow: 4px 4px 0 0 rgba(62, 156, 144, 0.35);
+    cursor: not-allowed;
+}
+
+.auth-container p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.auth-container p a {
+    color: var(--accent-teal);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-container p a:hover {
+    text-decoration: underline;
+}
+
+.auth-container p a:focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+@media (max-width: 480px) {
+    .auth-container {
+        margin: 2rem 1rem;
+        padding: 1.85rem 1.5rem 1.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .auth-container button[type="submit"],
+    .form-group input {
+        transition: none;
+    }
+}

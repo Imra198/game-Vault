@@ -1,0 +1,98 @@
+.home {
+    padding: 20px;
+    background-color: #151515; /* Dark background matching RAWG theme */
+    min-height: 100vh;
+    color: white;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.search-input {
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background-color: #2a2a2a;
+    color: white;
+}
+
+.Search-button {
+    padding: 10px 20px;
+    background-color: #535bf2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* This configures how cards stand side-by-side */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* fallback states spacing */
+.loading, .error-message, .no-results {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    color: #888;
+}
+
+/* Filter Toolbar Layout Wrapper */
+.filter-toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Wraps cleanly onto mobile screens */
+    width: 100%;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-weight: bold;
+}
+
+/* Styled Dropdowns */
+.filter-select {
+    padding: 8px 12px;
+    background-color: #2a2a2a;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.filter-select:focus {
+    border-color: #535bf2; /* Matches your brand button color */
+}
+
+/* Ensure mobile layout plays nice */
+@media (max-width: 600px) {
+    .filter-toolbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

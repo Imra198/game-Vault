@@ -1,0 +1,125 @@
+/* Base Container */
+.favorites {
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px);
+}
+
+/* High-Contrast Section Title */
+.favorites h2 {
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.6), 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive Grid Layout */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.games-grid > * {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.favorites-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(15, 18, 29, 0.7);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 16px;
+  margin: 3rem auto;
+  max-width: 550px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+}
+
+.favorites-empty h2 {
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+.favorites-empty p {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Favorite Action Button */
+.favorite-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(5px);
+}
+
+.favorite-btn:hover {
+  background-color: rgba(239, 68, 68, 0.7);
+  transform: scale(1.15);
+}
+
+.favorite-btn.active {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: #ffffff;
+  animation: heartPop 0.3s ease-in-out forwards;
+  box-shadow: 0 0 12px rgba(255, 65, 108, 0.7);
+}
+
+/* Keyframe Animations */
+@keyframes heartPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1.15); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* On Mobile */
+@media (max-width: 640px) {
+  .favorites {
+    padding: 1.5rem 1rem;
+  }
+
+  .favorites h2 {
+    font-size: 1.85rem;
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+} 

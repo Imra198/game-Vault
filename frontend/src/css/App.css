@@ -1,0 +1,40 @@
+/* core main-content allows children to expand fully */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+Stretches the parent application wrapper to fill the display window */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #151515;
+}
+
+.footer {
+    background-color: #1a1a1a;
+    border-top: 1px solid #333;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer a {
+    color: #535bf2;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.footer a:hover {
+    color: #747bff;
+    text-decoration: underline;
+}

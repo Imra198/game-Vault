@@ -1,0 +1,104 @@
+.game-card {
+    background-color: #202020;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.favorite-btn svg {
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.favorite-btn.active svg {
+    transform: scale(1.1);
+}
+
+.favorite-btn.active {
+    color: #ef4444; /* red color for liked games */
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Gives the image wrapper a real structural height */
+.game-poster {
+    position: relative;
+    width: 100%;
+    height: 180px; 
+    background-color: #333; /* Fallback gray if image loads slow */
+}
+
+/* CRUCIAL: Forces the image element to fill that box without distortions */
+.game-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.game-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.favorite-btn {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-info {
+    padding: 16px;
+}
+
+.game-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Keeps long game titles neat */
+}
+
+.game-info p {
+    margin: 0;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.exclusive-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 4px;
+    color: #fff;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.exclusive-badge.exclusive {
+    background-color: #e50914; /* Red for Exclusives */
+}
+
+.exclusive-badge.multiplatform {
+    background-color: rgba(0, 0, 0, 0.7); /* Translucent dark tag for Multiplatform */
+}
+
+.platform-list {
+    font-size: 12px;
+    color: #aaa;
+    margin: 4px 0;
+}
